@@ -1,5 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import './styles.css';
+import Heading from "./components/Heading";
+import IllnessButton from "./components/IllnessButton"
+
 
 function App() {
   return (
@@ -9,6 +13,11 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <Heading/>
+          <p className = "button">illness.name</p>
+          <p className = "button">illness.name</p>
+          <p className = "button">illness.name</p>
+          <p className = "button">illness.name</p>
         <a
           className="App-link"
           href="https://reactjs.org"

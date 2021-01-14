@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.button {
+   background: #FFFFFF;
+   background-image: -webkit-linear-gradient(top, #FFFFFF, #BCBCBC);
+   background-image: -moz-linear-gradient(top, #FFFFFF, #BCBCBC);
+   background-image: -ms-linear-gradient(top, #FFFFFF, #BCBCBC);
+   background-image: -o-linear-gradient(top, #FFFFFF, #BCBCBC);
+   background-image: -webkit-gradient(to bottom, #FFFFFF, #BCBCBC);
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   height: 10px;
+   line-height: 10px;
+   color: #000000;
+   font-family: Arial;
+   width: 500px;
+   font-size: 45px;
+   font-weight: 100;
+   padding: 40px;
+   -webkit-box-shadow: 1px 1px 20px 0 #000000;
+   -moz-box-shadow: 1px 1px 20px 0 #000000;
+   box-shadow: 1px 1px 20px 0 #000000;
+   border: solid #000000 1px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+}
+
+.button:hover {
+   border: solid #99C624 2px;
+   background: #FFFFFF;
+   background-image: -webkit-linear-gradient(top, #FFFFFF, #BCBCBC);
+   background-image: -moz-linear-gradient(top, #FFFFFF, #BCBCBC);
+   background-image: -ms-linear-gradient(top, #FFFFFF, #BCBCBC);
+   background-image: -o-linear-gradient(top, #FFFFFF, #BCBCBC);
+   background-image: -webkit-gradient(to bottom, #FFFFFF, #BCBCBC);
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   text-decoration: none;
+}

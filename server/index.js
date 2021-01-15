@@ -20,3 +20,6 @@ app.get("/", (req, res)=> {
 
 app.use('/api', router);
 app.listen(apiPort,()=> console.log(`Server is running on port ${apiPort}`));
+
+// const illnessesList = router.getIllnesses();
+// export default illnessesList;

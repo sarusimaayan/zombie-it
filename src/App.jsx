@@ -11,7 +11,6 @@ import {IllnessesScreen, HospitalsScreen} from './screens';
 function App() {
   return (
     <div className="App">
-      <IllnessesScreen />
       <Router>
         <Switch>
           <Route path = "/illnesses" exact component = {IllnessesScreen}/>

@@ -16,13 +16,13 @@ const getTimeFormat = (minutes) => {
   return waitPeriod
 }
 
-const HospitalButton = ({name, waitTime}) => {
-  const waitPeriod = getTimeFormat(waitTime);
+function HospitalButton(props){
+  const waitPeriod = getTimeFormat(props.waitTime);
 
   return(
     <div class="horizontal">
       <div class="item-name">
-        <p>{name}</p>
+        <p>{props.name}</p>
       </div>
       <div class="waitTime">
         <span class="text">Wait time:</span>
@@ -31,7 +31,5 @@ const HospitalButton = ({name, waitTime}) => {
     </div>
   );
 }
-
-
 
 export default HospitalButton;

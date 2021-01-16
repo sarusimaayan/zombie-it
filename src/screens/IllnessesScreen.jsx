@@ -45,6 +45,7 @@ class IllnessesScreen extends Component {
           <div>loading</div>
         ) : (
           <div>
+          <Heading text = "Select an illness:" /> 
             {illnesses.map(function(illnessObject, index){
               return(
                 <IllnessButton name = {illnessObject.name}/>
@@ -53,9 +54,6 @@ class IllnessesScreen extends Component {
           </div>
         )
       )
-
-
-
     );
   }
 }

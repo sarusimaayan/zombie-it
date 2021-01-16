@@ -6,7 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-image:radial-gradient(#36454f, black);
+  /* background-image:radial-gradient(#36454f, black); */
+  background-color: #36454f;
+
 
 }
 
@@ -14,15 +16,27 @@ h1 {
   color: #99C624;
 }
 
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-.layout {
-  /* display: flex;
-  align-items: center; */
+.Login {
+  padding: 60px 0;
+}
+
+.Login form {
+  margin: 0 auto;
+  max-width: 320px;
+}
+
+.severity {
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+
+  padding: 50px 200px 200px;
+  padding-bottom: 800px;
 }
 
 .item-name {
@@ -88,13 +102,4 @@ code {
 
    border-radius: 6px;
    text-decoration: none;
-}
-
-.severity {
-  display: flex;
-  align-items: center;
-  justify-content:space-around;
-
-  padding: 50px 200px 200px;
-  padding-bottom: 800px;
 }

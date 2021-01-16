@@ -1,8 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import './App.css';
-// import './styles.css';
-
+import Login from "./components/Login";
 import {IllnessesScreen, SeverityScreen, HospitalsScreen} from './screens';
 
 
@@ -14,6 +12,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
+          <Route path = "/login" exact component = {Login}/>
           <Route path = "/illnesses" exact component = {IllnessesScreen}/>
           <Route path = "/severity" exact component = {SeverityScreen}/>
           <Route path = "/hospitals" exact component = {HospitalsScreen}/>

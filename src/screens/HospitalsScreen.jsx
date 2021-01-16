@@ -3,6 +3,16 @@ import api from '../api';
 import Heading from "../components/Heading";
 import HospitalButton from "../components/HospitalButton";
 
+
+const calcTotalProcessTime = (hospitalObject, painLevel) => {
+  const hospitalWaitingList = hospitalObject.waitingList[painLevel];
+  const totalProcessTime =
+  hospitalWaitingList.averageProcessTime *
+  hospitalWaitingList.patientCount;
+  return totalProcessTime;
+}
+
+
 class HospitalsScreen extends Component {
 
   constructor(props) {
@@ -13,7 +23,6 @@ class HospitalsScreen extends Component {
         isLoading: true,
         isError: false,
     };
-    // this.calcTotalProcessTime = this.calcTotalProcessTime.bind(this);
   }
 
   componentDidMount = async () => {
@@ -38,13 +47,6 @@ class HospitalsScreen extends Component {
 
   };
 
-  calcTotalProcessTime = (hospitalObject, painLevel) => {
-    const hospitalWaitingList = hospitalObject.waitingList[painLevel];
-    const totalProcessTime =
-    hospitalWaitingList.averageProcessTime *
-    hospitalWaitingList.patientCount;
-    return totalProcessTime;
-  }
 
   render() {
     const painLevel = 3;
@@ -60,12 +62,12 @@ class HospitalsScreen extends Component {
           <div>
           <Heading text = "Our suggested hospitals:" />
             {hospitals.map(function(hospitalObject, index){
-              // const totalProcessTime = this.calcTotalProcessTime(hospitalObject, painLevel);
-              // console.log(totalProcessTime);
+              const totalProcessTime = calcTotalProcessTime(hospitalObject, painLevel);
+              console.log(totalProcessTime);
               return(
                 <HospitalButton
                 name={hospitalObject.name}
-                waitTime={60}
+                waitTime={totalProcessTime}
                 />
               )
             })}

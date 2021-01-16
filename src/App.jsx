@@ -1,10 +1,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import logo from './logo.svg';
 import './App.css';
 // import './styles.css';
 
-import {IllnessesScreen, HospitalsScreen} from './screens';
+import {IllnessesScreen, SeverityScreen, HospitalsScreen} from './screens';
+
+
 // import 'bootstrap/dist/css/bootstrap.min.css'
 
 
@@ -14,6 +15,7 @@ function App() {
       <Router>
         <Switch>
           <Route path = "/illnesses" exact component = {IllnessesScreen}/>
+          <Route path = "/severity" exact component = {SeverityScreen}/>
           <Route path = "/hospitals" exact component = {HospitalsScreen}/>
         </Switch>
       </Router>

@@ -20,7 +20,7 @@ function HospitalButton(props){
   const waitPeriod = getTimeFormat(props.waitTime);
 
   return(
-    <div class="horizontal">
+    <div class="button">
       <div class="item-name">
         <p>{props.name}</p>
       </div>

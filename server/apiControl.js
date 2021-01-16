@@ -17,10 +17,9 @@ const getIllnesses = async (req, res) => {
 
       // const illnessesDict = illnessesArray.reduce((a,x) => ({...a, [x.illness.name]: x.illness.id}), {})
       const illnessesMap = illnessesArray.map(x => x.illness);
-      console.log(illnessesMap);
+      return res.status(200).json(illnessesMap);
     })
   })
-  return res.status(200).json({ success: true, data: 'illness0' })
 }// .catch(err => console.log(err))
 
 

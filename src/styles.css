@@ -1,13 +1,14 @@
 body {
   margin: 0;
   padding: 60px 60px;
-  text-align: left;
+  /* text-align: left; */
   background-color: #36454f;
 }
 
 h1 {
   color: #99C624;
   padding-bottom: 20px;
+  text-align: left;
 }
 
 h2,h5 {
@@ -29,12 +30,19 @@ code {
   max-width: 320px;
 }
 
+.container {
+  margin: auto;
+  width: 50%;
+}
+
+.inner-center {
+  padding: 20px 20px 0;
+}
+
 .severity {
+  padding-top: 40px;
   display: flex;
-  align-items: center;
   justify-content:space-around;
-  padding: 50px 200px 200px;
-  padding-bottom: 800px;
 }
 
 .item-name {
@@ -86,7 +94,7 @@ code {
    margin: 0.3em;
    padding: 0;
    height: 80px;
-   width: 500px;
+   width: 100%;
    color: #000000;
    font-family: Arial;
    font-size: 20px;

@@ -38,16 +38,18 @@ const IllnessesScreen = () => {
       isLoading ? (
         <div>loading</div>
       ) : (
-        <div>
-        <Heading text = "Select an illness:" />
-          {illnesses.map((illnessObject, index) => {
-            return(
-              <IllnessButton
-                name={illnessObject.name}
-                onClick={() => history.push("/severity", illnessObject)}
-              />
-            )
-          })}
+        <div className="container">
+          <div className="inner-center">
+            <Heading text = "Select an illness:" />
+            {illnesses.map((illnessObject, index) => {
+              return(
+                <IllnessButton
+                  name={illnessObject.name}
+                  onClick={() => history.push("/severity", illnessObject)}
+                />
+              )
+            })}
+            </div>
         </div>
       )
     )

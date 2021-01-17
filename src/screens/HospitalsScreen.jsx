@@ -64,17 +64,20 @@ const HospitalsScreen = (props) => {
       isLoading ? (
         <div>loading</div>
       ) : (
-        <div>
-        <Heading text = "Our suggested hospitals:" />
-          {hospitalsTotalProcessTimeArraySorted.map((hospitalObject, index) => {
-            return(
-              <HospitalButton
-                name={hospitalObject.name}
-                waitTime={hospitalObject.totalProcessTime}
-              />
-            )
-          })}
+        <div className="container">
+          <div className="inner-center">
+            <Heading text = "Our suggested hospitals:" />
+              {hospitalsTotalProcessTimeArraySorted.map((hospitalObject, index) => {
+                return(
+                  <HospitalButton
+                    name={hospitalObject.name}
+                    waitTime={hospitalObject.totalProcessTime}
+                  />
+                )
+              })}
+          </div>
         </div>
+        
       )
     )
   );

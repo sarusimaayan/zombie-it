@@ -16,13 +16,15 @@ const SeverityScreen = (props) => {
   // }
 
     return (
-          <div>
-            <Heading text = "Select severity level:" />
-            <h2>{illnessName}</h2>
-              <SeverityButton
-                onClick={(levelOfPain) => {
-                   history.push("/hospitals", levelOfPain)}}
-              />
+          <div className="container">
+            <div className="inner-center">
+              <Heading text = "Select severity level:" />
+              <h2>{illnessName}</h2>
+                <SeverityButton
+                  onClick={(levelOfPain) => {
+                     history.push("/hospitals", levelOfPain)}}
+                />
+            </div>
           </div>
         )
 }

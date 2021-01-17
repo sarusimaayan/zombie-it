@@ -1,25 +1,9 @@
 import React from "react";
-// import ReactDOM from "react-dom";
 import '../styles.css';
+import { getTimeFormat } from "../utils/utils";
 
-
-const getTimeFormat = (minutes) => {
-  let waitPeriod = `${minutes} mins`;
-  if (minutes>=60){
-    const hours = Math.floor(minutes/60);
-    minutes %= 60;
-    waitPeriod = `${hours}:${minutes} hrs`;
-    if (hours>=24){
-      const days = hours/24;
-      waitPeriod = `${days.toFixed(1)} days`;
-    }
-  }
-  return waitPeriod
-}
 
 function HospitalButton(props){
-  const waitPeriod = getTimeFormat(props.waitTime);
-
   return(
     <div class="button">
       <div class="item-name">
@@ -27,7 +11,7 @@ function HospitalButton(props){
       </div>
       <div class="waitTime">
         <span class="text">Wait time:</span>
-        <span class="time">{waitPeriod}</span>
+        <span class="time">{getTimeFormat(props.waitTime)}</span>
       </div>
     </div>
   );

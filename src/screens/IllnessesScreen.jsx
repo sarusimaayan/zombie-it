@@ -11,6 +11,7 @@ export default function IllnessesScreen() {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
+//Get the full illnesses array from the server
   useEffect(function() {
     try {
       async function fetchIllnesses(){
@@ -27,26 +28,28 @@ export default function IllnessesScreen() {
     }
   }, []);
 
-    return (
-      isError ? (
-        <div>error</div>
+
+
+  return (
+    isError ? (
+      <div>error</div>
+    )
+    : (
+      isLoading ? (
+        <div>loading</div>
+      ) : (
+        <div>
+        <Heading text = "Select an illness:" />
+          {illnesses.map(function(illnessObject, index){
+            return(
+              <IllnessButton
+                name={illnessObject.name}
+                onClick={() => history.push("/severity", illnessObject)}
+              />
+            )
+          })}
+        </div>
       )
-      : (
-        isLoading ? (
-          <div>loading</div>
-        ) : (
-          <div>
-          <Heading text = "Select an illness:" />
-            {illnesses.map(function(illnessObject, index){
-              return(
-                <IllnessButton
-                  name={illnessObject.name}
-                  onClick={() => history.push("/severity", illnessObject)}
-                />
-              )
-            })}
-          </div>
-        )
-      )
-    );
+    )
+  );
 }

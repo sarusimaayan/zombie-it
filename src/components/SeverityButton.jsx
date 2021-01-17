@@ -1,5 +1,4 @@
 import React from "react";
-// import ReactDOM from "react-dom";
 import '../styles.css';
 import Emojy0 from '@material-ui/icons/SentimentSatisfied';
 import Emojy1 from '@material-ui/icons/SentimentDissatisfied';

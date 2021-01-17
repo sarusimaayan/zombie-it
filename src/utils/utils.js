@@ -1,5 +1,5 @@
 
-
+//Convert time in minutes to hours and days
 export const getTimeFormat = (minutes) => {
   let waitPeriod = `${minutes} mins`;
   if (minutes>=60){

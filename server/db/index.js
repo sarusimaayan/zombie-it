@@ -1,7 +1,8 @@
 // server.db
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost:27017/patientsDB", {useNewUrlParser:true});
+mongoose.connect("mongodb://localhost:27017/patientsDB");
+// {useNewUrlParser:true}
 
 const patientSchema = new mongoose.Schema({
   firstName: String,

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Heading from "../components/Heading";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -25,17 +26,15 @@ export default function LoginScreen() {
     <div className="Login">
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="name">
-        <h1>Please enter patient's details</h1>
+        <Heading text = "Please enter patient's details:" />
           <Form.Label>First Name</Form.Label>
           <Form.Control
-            // autoFocus
             type="text"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
           <Form.Label>Last Name</Form.Label>
           <Form.Control
-            // autoFocus
             type="text"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}

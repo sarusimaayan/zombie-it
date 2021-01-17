@@ -11,6 +11,7 @@ export default function HospitalsScreen (props){
   const prop = props.history.location;
   const painLevel = prop.state || "0";
 
+//Get the full hospitals array from the server
   useEffect(function() {
     try{
       async function fetchHospitals(){
@@ -28,6 +29,8 @@ export default function HospitalsScreen (props){
     }
   }, []);
 
+
+//Calculate the total waiting time (in minuts) for the selected level of pain
   const calcTotalProcessTime = (hospitalObject, painLevel) => {
     const hospitalWaitingList = hospitalObject.waitingList[painLevel];
     const totalProcessTime =
@@ -35,6 +38,8 @@ export default function HospitalsScreen (props){
     return totalProcessTime;
   }
 
+
+//For each hospital, calculate the total waiting time and add it to the hospital object
   const hospitalsTotalProcessTimeArray = hospitals.map(function(hospitalObject, index){
     const totalProcessTime = calcTotalProcessTime(hospitalObject, painLevel);
     return {
@@ -43,6 +48,8 @@ export default function HospitalsScreen (props){
     }
   });
 
+
+//Sort the hospitals by waiting time (Shortest to longest)
   const hospitalsTotalProcessTimeArraySorted =
     hospitalsTotalProcessTimeArray.sort(function (a, b){
       return a.totalProcessTime -b.totalProcessTime;

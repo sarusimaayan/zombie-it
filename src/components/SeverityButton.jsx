@@ -1,39 +1,44 @@
 import React from "react";
 // import ReactDOM from "react-dom";
 import '../styles.css';
-import Severity0 from '@material-ui/icons/SentimentSatisfied';
-import Severity1 from '@material-ui/icons/SentimentDissatisfied';
-import Severity2 from '@material-ui/icons/SentimentVeryDissatisfied';
-import Severity3 from '@material-ui/icons/MoodBad';
-import Severity4 from '@material-ui/icons/SentimentVeryDissatisfiedOutlined';
+import Emojy0 from '@material-ui/icons/SentimentSatisfied';
+import Emojy1 from '@material-ui/icons/SentimentDissatisfied';
+import Emojy2 from '@material-ui/icons/SentimentVeryDissatisfied';
+import Emojy3 from '@material-ui/icons/MoodBad';
+import Emojy4 from '@material-ui/icons/SentimentVeryDissatisfiedOutlined';
 
-
-
-function chooseSeverity(event) {
-  event.preventDefault();
-}
 
 function SeverityButton(props){
-  function handleClick() {
-    props.painLevel(props.level);
+
+  function handleClick(id) {
+    props.onClick(id);
   }
 
   return(
     <div class="severity">
-      <button onClick={handleClick}><Severity0
-      style={{color: "DarkBlue", fontSize: "50px"}} /></button>
+      <button onClick={() => handleClick(0)}>
+        <Emojy0 style={{color: "DarkBlue", fontSize: "50px"}} />
+      </button>
 
-      <button onClick={handleClick}><Severity1
-      style={{color: "ForestGreen", fontSize: "50px"}} /></button>
 
-      <button onClick={handleClick}><Severity2
-      style={{color: "Gold", fontSize: "50px"}} /></button>
+      <button onClick={() => handleClick(1)}>
+        <Emojy1 style={{color: "ForestGreen", fontSize: "50px"}} />
+      </button>
 
-      <button onClick={handleClick}><Severity3
-      style={{color: "DarkOrange", fontSize: "50px"}} /></button>
 
-      <button onClick={handleClick}><Severity4
-      style={{color: "FireBrick", fontSize: "50px"}} /></button>
+      <button onClick={() => handleClick(2)}>
+      <Emojy2 style={{color: "Gold", fontSize: "50px"}} />
+      </button>
+
+
+      <button onClick={() => handleClick(3)}>
+      <Emojy3 style={{color: "DarkOrange", fontSize: "50px"}} />
+      </button>
+
+
+      <button onClick={() => handleClick(4)}>
+      <Emojy4 style={{color: "FireBrick", fontSize: "50px"}} />
+      </button>
     </div>
   );
 }

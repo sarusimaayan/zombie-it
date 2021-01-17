@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import api from '../api';
 import Heading from "../components/Heading";
 import HospitalButton from "../components/HospitalButton";
@@ -12,45 +12,34 @@ const calcTotalProcessTime = (hospitalObject, painLevel) => {
   return totalProcessTime;
 }
 
-
-class HospitalsScreen extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-        hospitals: [],
-        painLevel:0,
-        isLoading: true,
-        isError: false,
-    };
+export default function HospitalsScreen (props){
+  console.log(props);
+  const [hospitals, setHospitals] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
+  const prop = props.history.location;
+  let painLevel = "0";
+  if (prop){
+    painLevel = prop.state;
   }
 
-  componentDidMount = async () => {
-    // will run after the component is rendered in the DOM
-
-      try{
+  useEffect(function() {
+    try{
+      async function fetchHospitals(){
         const hospitalsArray = await api.getHospitals();
         console.log(hospitalsArray.data);
-
-
-        this.setState({
-            hospitals: hospitalsArray.data,
+        setHospitals(hospitalsArray.data)
             // painLevel:
-            isLoading: false,
-        });
-
-      } catch (err) {
-        this.setState({
-          isError: true,
-        })
+        setIsLoading(false);
       }
 
-  };
+      fetchHospitals();
 
+    } catch (err) {
+      setIsError(true);
+    }
+  }, []);
 
-  render() {
-    const painLevel = 3;
-    const { hospitals, isLoading, isError } = this.state;
     return (
       isError ? (
         <div>error</div>
@@ -77,7 +66,5 @@ class HospitalsScreen extends Component {
 
       )
     );
-  }
-}
 
-export default HospitalsScreen;
+}

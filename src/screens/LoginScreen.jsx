@@ -18,7 +18,7 @@ export default function LoginScreen() {
   function handleSubmit(event) {
     event.preventDefault();
     history.push("/illnesses");
-    //const submitData...
+    //const submitData illnessName...
   }
 
   return (

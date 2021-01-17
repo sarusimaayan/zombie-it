@@ -6,10 +6,11 @@ import '../styles.css';
 const getTimeFormat = (minutes) => {
   let waitPeriod = `${minutes} mins`;
   if (minutes>=60){
-    const hours = minutes/60;
-    waitPeriod = `${hours.toFixed(1)} hrs`;
+    const hours = Math.floor(minutes/60);
+    minutes %= 60;
+    waitPeriod = `${hours}:${minutes} hrs`;
     if (hours>=24){
-      const days = Math.floor(hours/24);
+      const days = hours/24;
       waitPeriod = `${days.toFixed(1)} days`;
     }
   }

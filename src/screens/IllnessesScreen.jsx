@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import api from '../api';
 import Heading from "../components/Heading";
 import IllnessButton from "../components/IllnessButton";
@@ -7,7 +7,6 @@ import { useHistory } from "react-router-dom";
 
 export default function IllnessesScreen() {
   const history = useHistory();
-
   const [illnesses, setIllnesses] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -22,6 +21,7 @@ export default function IllnessesScreen() {
       }
 
       fetchIllnesses();
+
     } catch (err) {
       setIsError(true);
     }

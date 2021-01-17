@@ -11,8 +11,8 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path = "/login" exact component = {LoginScreen}/>
-          <Route path = "/illnesses" exact component = {IllnessesScreen}/>
+          <Route path = "/login" exact component={LoginScreen}/>
+          <Route path = "/illnesses" exact component={IllnessesScreen}/>
           <Route
             path = "/severity"
             exact
@@ -20,7 +20,13 @@ function App() {
               <SeverityScreen {...props} />
             )}
             />
-          <Route path = "/hospitals" exact component = {HospitalsScreen}/>
+          <Route
+            path = "/hospitals"
+            exact
+            render={(props) => (
+            <HospitalsScreen {...props} />
+          )}
+          />
         </Switch>
       </Router>
     </div>

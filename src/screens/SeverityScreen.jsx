@@ -1,30 +1,28 @@
-import React, { Component } from 'react';
-// import api from '../api';
 import Heading from "../components/Heading";
 import SeverityButton from "../components/SeverityButton";
+import { useHistory } from "react-router-dom";
 
 
-class SeverityScreen extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-        // isLoading: true,
-        // isError: false,
-    }
-    console.log(props);
+export default function SeverityScreen(props){
+  const history = useHistory();
+  const state = props.history.location.state;
+  let illnessName = "";
+  if (state){
+    illnessName = state.name;
   }
 
-  render() {
-    const { isLoading, isError } = this.state;
+  // function handleSubmit(event) {
+  //   const submitData severityLevel...
+  // }
+
     return (
           <div>
-          <Heading text = "Select severity level:" />
-            <h2>Add Illness Name here</h2>
-            <SeverityButton/>
+            <Heading text = "Select severity level:" />
+            <h2>{illnessName}</h2>
+              <SeverityButton
+                onClick={function (levelOfPain){
+                   history.push("/hospitals", levelOfPain)}}
+              />
           </div>
         )
-  }
 }
-
-export default SeverityScreen;

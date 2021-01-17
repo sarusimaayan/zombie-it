@@ -13,7 +13,13 @@ function App() {
         <Switch>
           <Route path = "/login" exact component = {LoginScreen}/>
           <Route path = "/illnesses" exact component = {IllnessesScreen}/>
-          <Route path = "/severity" exact component = {SeverityScreen}/>
+          <Route
+            path = "/severity"
+            exact
+            render={(props) => (
+              <SeverityScreen {...props} />
+            )}
+            />
           <Route path = "/hospitals" exact component = {HospitalsScreen}/>
         </Switch>
       </Router>

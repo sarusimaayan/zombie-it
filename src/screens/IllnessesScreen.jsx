@@ -1,41 +1,32 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import api from '../api';
 import Heading from "../components/Heading";
 import IllnessButton from "../components/IllnessButton";
+import { useHistory } from "react-router-dom";
 
 
-class IllnessesScreen extends Component {
+export default function IllnessesScreen() {
+  const history = useHistory();
 
-  constructor(props) {
-    super(props);
-    this.state = {
-        illnesses: [],
-        isLoading: true,
-        isError: false,
-    }
-  }
+  const [illnesses, setIllnesses] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
-  componentDidMount = async () => {
-    // will run after the component is rendered in the DOM
-
-      try{
-        const illnessesArray = await api.getIllnesses();
-        console.log(illnessesArray.data);
-        this.setState({
-            illnesses: illnessesArray.data,
-            isLoading: false,
-        });
-
-      } catch (err) {
-        this.setState({
-          isError: true,
-        })
+  useEffect(function() {
+    try {
+      async function fetchIllnesses(){
+        const illnessesResponse = await api.getIllnesses();
+        console.log(illnessesResponse.data);
+        setIllnesses(illnessesResponse.data);
+        setIsLoading(false);
       }
 
-  }
+      fetchIllnesses();
+    } catch (err) {
+      setIsError(true);
+    }
+  }, []);
 
-  render() {
-    const { illnesses, isLoading, isError } = this.state;
     return (
       isError ? (
         <div>error</div>
@@ -45,17 +36,17 @@ class IllnessesScreen extends Component {
           <div>loading</div>
         ) : (
           <div>
-          <Heading text = "Select an illness:" /> 
+          <Heading text = "Select an illness:" />
             {illnesses.map(function(illnessObject, index){
               return(
-                <IllnessButton name = {illnessObject.name}/>
+                <IllnessButton
+                  name={illnessObject.name}
+                  onClick={() => history.push("/severity", illnessObject)}
+                />
               )
             })}
           </div>
         )
       )
     );
-  }
 }
-
-export default IllnessesScreen;

@@ -12,6 +12,7 @@ class SeverityScreen extends Component {
         // isLoading: true,
         // isError: false,
     }
+    console.log(props);
   }
 
   render() {

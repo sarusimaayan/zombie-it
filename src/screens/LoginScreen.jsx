@@ -26,14 +26,14 @@ export default function LoginScreen() {
     <div className="Login">
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="name">
-        <Heading text = "Please enter patient's details:" />
-          <Form.Label>First Name</Form.Label>
+        <Heading text = "Please enter patient's details" />
+          <Form.Label><h5>First Name:</h5></Form.Label>
           <Form.Control
             type="text"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
-          <Form.Label>Last Name</Form.Label>
+          <Form.Label><h5>Last Name:</h5></Form.Label>
           <Form.Control
             type="text"
             value={lastName}

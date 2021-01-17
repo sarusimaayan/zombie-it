@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import {LoginScreen, IllnessesScreen, SeverityScreen, HospitalsScreen} from './screens';
 
 
-// import 'bootstrap/dist/css/bootstrap.min.css'
-
 
 function App() {
   return (

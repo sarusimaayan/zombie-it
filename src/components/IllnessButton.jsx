@@ -3,8 +3,8 @@ import '../styles.css';
 
 function IllnessButton(props){
   return(
-    <div onClick={props.onClick}>
-      <p className="button">{props.name}</p>
+    <div className="button" onClick={props.onClick}>
+      <h3>{props.name}</h3>
     </div>
   );
 }

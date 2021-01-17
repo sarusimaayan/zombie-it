@@ -17,22 +17,12 @@ class SeverityScreen extends Component {
   render() {
     const { isLoading, isError } = this.state;
     return (
-      // isError ? (
-      //   <div>error</div>
-      // )
-      // : (
-      //   isLoading ? (
-      //     <div>loading</div>
-      //   ) : (
           <div>
           <Heading text = "Select severity level:" />
             <h2>Add Illness Name here</h2>
             <SeverityButton/>
-            })}
           </div>
         )
-      // )
-    // );
   }
 }
 

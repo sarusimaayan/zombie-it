@@ -1,5 +1,6 @@
+import LoginScreen from './LoginScreen';
 import IllnessesScreen from './IllnessesScreen';
 import HospitalsScreen from './HospitalsScreen';
 import SeverityScreen from './SeverityScreen';
 
-export {IllnessesScreen, SeverityScreen,  HospitalsScreen};
+export {LoginScreen, IllnessesScreen, SeverityScreen,  HospitalsScreen};

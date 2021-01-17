@@ -9,6 +9,10 @@ import Severity4 from '@material-ui/icons/SentimentVeryDissatisfiedOutlined';
 
 
 
+function chooseSeverity(event) {
+  event.preventDefault();
+}
+
 function SeverityButton(props){
   function handleClick() {
     props.painLevel(props.level);
@@ -27,7 +31,7 @@ function SeverityButton(props){
 
       <button onClick={handleClick}><Severity3
       style={{color: "DarkOrange", fontSize: "50px"}} /></button>
-      
+
       <button onClick={handleClick}><Severity4
       style={{color: "FireBrick", fontSize: "50px"}} /></button>
     </div>

@@ -3,7 +3,7 @@ import api from '../api';
 import Heading from "../components/Heading";
 import HospitalButton from "../components/HospitalButton";
 
-export default function HospitalsScreen (props){
+const HospitalsScreen = (props) => {
   console.log(props);
   const [hospitals, setHospitals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -12,9 +12,9 @@ export default function HospitalsScreen (props){
   const painLevel = prop.state || "0";
 
 //Get the full hospitals array from the server
-  useEffect(function() {
+  useEffect(() => {
     try{
-      async function fetchHospitals(){
+      const fetchHospitals = async() => {
         const hospitalsArray = await api.getHospitals();
         console.log(hospitalsArray.data);
         setHospitals(hospitalsArray.data)
@@ -40,7 +40,7 @@ export default function HospitalsScreen (props){
 
 
 //For each hospital, calculate the total waiting time and add it to the hospital object
-  const hospitalsTotalProcessTimeArray = hospitals.map(function(hospitalObject, index){
+  const hospitalsTotalProcessTimeArray = hospitals.map((hospitalObject, index) => {
     const totalProcessTime = calcTotalProcessTime(hospitalObject, painLevel);
     return {
       ...hospitalObject,
@@ -51,7 +51,7 @@ export default function HospitalsScreen (props){
 
 //Sort the hospitals by waiting time (Shortest to longest)
   const hospitalsTotalProcessTimeArraySorted =
-    hospitalsTotalProcessTimeArray.sort(function (a, b){
+    hospitalsTotalProcessTimeArray.sort( (a, b) => {
       return a.totalProcessTime -b.totalProcessTime;
     });
 
@@ -66,7 +66,7 @@ export default function HospitalsScreen (props){
       ) : (
         <div>
         <Heading text = "Our suggested hospitals:" />
-          {hospitalsTotalProcessTimeArraySorted.map(function(hospitalObject, index){
+          {hospitalsTotalProcessTimeArraySorted.map((hospitalObject, index) => {
             return(
               <HospitalButton
                 name={hospitalObject.name}
@@ -79,3 +79,5 @@ export default function HospitalsScreen (props){
     )
   );
 }
+
+export default HospitalsScreen;

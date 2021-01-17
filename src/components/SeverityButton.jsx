@@ -7,9 +7,9 @@ import Emojy3 from '@material-ui/icons/MoodBad';
 import Emojy4 from '@material-ui/icons/SentimentVeryDissatisfiedOutlined';
 
 
-function SeverityButton(props){
+const SeverityButton = (props) =>{
 
-  function handleClick(id) {
+  const handleClick = (id) => {
     props.onClick(id);
   }
 

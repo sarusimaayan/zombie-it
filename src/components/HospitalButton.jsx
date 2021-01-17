@@ -3,7 +3,7 @@ import '../styles.css';
 import { getTimeFormat } from "../utils/utils";
 
 
-function HospitalButton(props){
+const HospitalButton = (props) => {
   return(
     <div class="button">
       <div class="item-name">

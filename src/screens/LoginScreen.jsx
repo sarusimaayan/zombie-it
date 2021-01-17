@@ -6,17 +6,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles.css';
 import { useHistory } from "react-router-dom";
 
-export default function LoginScreen() {
+const LoginScreen = () => {
   const history = useHistory();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
 
-  function validateDetails(name) {
+  const validateDetails = (name) => {
     return (firstName.length > 0 && lastName.length > 0);
   }
 
-  function handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
     history.push("/illnesses");
     //const submitData illnessName...
@@ -47,3 +47,5 @@ export default function LoginScreen() {
     </div>
   );
 }
+
+export default LoginScreen;

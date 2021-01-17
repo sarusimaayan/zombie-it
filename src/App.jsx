@@ -4,7 +4,7 @@ import {LoginScreen, IllnessesScreen, SeverityScreen, HospitalsScreen} from './s
 
 
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Router>

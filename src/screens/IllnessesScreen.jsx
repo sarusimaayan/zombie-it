@@ -5,16 +5,16 @@ import IllnessButton from "../components/IllnessButton";
 import { useHistory } from "react-router-dom";
 
 
-export default function IllnessesScreen() {
+const IllnessesScreen = () => {
   const history = useHistory();
   const [illnesses, setIllnesses] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
 //Get the full illnesses array from the server
-  useEffect(function() {
+  useEffect(() => {
     try {
-      async function fetchIllnesses(){
+      const fetchIllnesses = async() =>{
         const illnessesResponse = await api.getIllnesses();
         console.log(illnessesResponse.data);
         setIllnesses(illnessesResponse.data);
@@ -40,7 +40,7 @@ export default function IllnessesScreen() {
       ) : (
         <div>
         <Heading text = "Select an illness:" />
-          {illnesses.map(function(illnessObject, index){
+          {illnesses.map((illnessObject, index) => {
             return(
               <IllnessButton
                 name={illnessObject.name}
@@ -53,3 +53,5 @@ export default function IllnessesScreen() {
     )
   );
 }
+
+export default IllnessesScreen;

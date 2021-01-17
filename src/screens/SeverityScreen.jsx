@@ -3,7 +3,7 @@ import SeverityButton from "../components/SeverityButton";
 import { useHistory } from "react-router-dom";
 
 
-export default function SeverityScreen(props){
+const SeverityScreen = (props) => {
   const history = useHistory();
   const state = props.history.location.state;
   let illnessName = "";
@@ -11,7 +11,7 @@ export default function SeverityScreen(props){
     illnessName = state.name;
   }
 
-  // function handleSubmit(event) {
+  //  handleSubmit(event) {
   //   const submitData severityLevel...
   // }
 
@@ -20,9 +20,11 @@ export default function SeverityScreen(props){
             <Heading text = "Select severity level:" />
             <h2>{illnessName}</h2>
               <SeverityButton
-                onClick={function (levelOfPain){
+                onClick={(levelOfPain) => {
                    history.push("/hospitals", levelOfPain)}}
               />
           </div>
         )
 }
+
+export default SeverityScreen;

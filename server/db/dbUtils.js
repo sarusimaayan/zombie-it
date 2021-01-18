@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost:27017/patientsDB");
+mongoose.connect('mongodb://localhost:27017/patientsDB');
 // {useNewUrlParser:true}
 
 const patientSchema = new mongoose.Schema({
@@ -15,7 +15,7 @@ const patientSchema = new mongoose.Schema({
 
 // Create a mongoose model with our collection name in a singular form
 // Mongoose will convert the singular to a plurelise form and create the collection
-const Patient = mongoose.model("Patient", patientSchema);
+const Patient = mongoose.model('Patient', patientSchema);
 
 const inserPatient = async (firstName, lastName, illnessObject) => {
 
@@ -23,10 +23,10 @@ const inserPatient = async (firstName, lastName, illnessObject) => {
     firstName,
     lastName,
     illnesses : illnessObject,
-  })
+  });
 
   return patient.save();
-}
+};
 
 // Patient.updateOne({_id: "60042cf024a81a5c1cd9fa1c"}, {firstName:"updatedName"}, function(err){
 //   if (err){
@@ -54,4 +54,4 @@ const inserPatient = async (firstName, lastName, illnessObject) => {
 
 module.exports = {
   inserPatient,
-}
+};

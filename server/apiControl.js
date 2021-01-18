@@ -1,8 +1,8 @@
 const axios = require('axios');
 const dbUtils = require('./db/dbUtils');
 
-const illnessesUrl = "http://dmmw-api.australiaeast.cloudapp.azure.com:8080/illnesses";
-const hospitalsUrl = "http://dmmw-api.australiaeast.cloudapp.azure.com:8080/hospitals";
+const illnessesUrl = 'http://dmmw-api.australiaeast.cloudapp.azure.com:8080/illnesses';
+const hospitalsUrl = 'http://dmmw-api.australiaeast.cloudapp.azure.com:8080/hospitals';
 
 
 const getIllnesses = async (req, res) => {
@@ -13,7 +13,7 @@ const getIllnesses = async (req, res) => {
       const illnessesMap = illnessesArray.map(x => x.illness);
       return res.status(200).json(illnessesMap);
     });
-}
+};
 
 const getHospitals = async (req, res) => {
   axios.get(hospitalsUrl)
@@ -21,7 +21,7 @@ const getHospitals = async (req, res) => {
       const hospitalsData = response.data;
       return res.status(200).json(hospitalsData._embedded.hospitals);
     });
-}
+};
 
 const postPatientDetails = async (req, res) => {
   console.log('params', req.body);
@@ -34,10 +34,10 @@ const postPatientDetails = async (req, res) => {
     console.log('fail', e);
     res.send({ success: false });
   }
-}
+};
 
 module.exports = {
-    getIllnesses,
-    getHospitals,
-    postPatientDetails,
-}
+  getIllnesses,
+  getHospitals,
+  postPatientDetails,
+};

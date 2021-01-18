@@ -24,8 +24,8 @@ export const getTimeFormat = (minutes) => {
       waitPeriod = `${days.toFixed(1)} days`;
     }
   }
-  return waitPeriod
-}
+  return waitPeriod;
+};
 
 export const getPatientInfo = () => {
   return {
@@ -39,7 +39,7 @@ export const getPatientInfo = () => {
       }
     ]
   };
-}
+};
 
 export const savePatientInfoToDB = async () => {
   const data = getPatientInfo();

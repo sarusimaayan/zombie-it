@@ -1,5 +1,5 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {LoginScreen, IllnessesScreen, SeverityScreen, HospitalsScreen} from './screens';
 
 
@@ -17,18 +17,18 @@ const App = () => {
             render={(props) => (
               <SeverityScreen {...props} />
             )}
-            />
+          />
           <Route
             path = "/hospitals"
             exact
             render={(props) => (
-            <HospitalsScreen {...props} />
-          )}
+              <HospitalsScreen {...props} />
+            )}
           />
         </Switch>
       </Router>
     </div>
   );
-}
+};
 
 export default App;

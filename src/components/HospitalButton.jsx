@@ -5,16 +5,16 @@ import { getTimeFormat } from '../utils/utils';
 
 const HospitalButton = (props) => {
   return(
-    <div class="button">
-      <div class="button-item-name">
+    <div className="button">
+      <div className="button-item-name">
         <p>{props.name}</p>
       </div>
-      <div class="button-waitTime">
-        <span class="text">Wait time:</span>
-        <span class="time">{getTimeFormat(props.waitTime)}</span>
+      <div className="button-waitTime">
+        <span className="text">Wait time:</span>
+        <span className="time">{getTimeFormat(props.waitTime)}</span>
       </div>
     </div>
   );
-}
+};
 
 export default HospitalButton;

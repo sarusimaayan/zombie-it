@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import '../styles.css';
 
 const IllnessButton = (props) => {
@@ -9,6 +9,6 @@ const IllnessButton = (props) => {
       </div>
     </div>
   );
-}
+};
 
 export default IllnessButton;

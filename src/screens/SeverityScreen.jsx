@@ -1,7 +1,9 @@
 import Heading from "../components/Heading";
 import SeverityButton from "../components/SeverityButton";
 import { useHistory } from "react-router-dom";
-
+import Storage from '../utils/storageUtils';
+import { savePatientInfoToDB } from '../utils/utils';
+import { PATIENT_DATA } from '../utils/constants';
 
 const SeverityScreen = (props) => {
   const history = useHistory();
@@ -11,22 +13,24 @@ const SeverityScreen = (props) => {
     illnessName = state.name;
   }
 
-  //  handleSubmit(event) {
-  //   const submitData severityLevel...
-  // }
+const handleClick = (levelOfPain) => {
+  Storage.save(PATIENT_DATA.LevelOfPain, levelOfPain);
+  // didn't awaited to avoid blocking the ui
+  savePatientInfoToDB();
+  history.push("/hospitals", levelOfPain);
+}
 
-    return (
-          <div className="container">
-            <div className="inner-center">
-              <Heading text = "Select severity level:" />
-              <h2>{illnessName}</h2>
-                <SeverityButton
-                  onClick={(levelOfPain) => {
-                     history.push("/hospitals", levelOfPain)}}
-                />
-            </div>
-          </div>
-        )
+return (
+      <div className="container">
+        <div className="inner-center">
+          <Heading text = "Select severity level:" />
+          <h2>{illnessName}</h2>
+            <SeverityButton
+              onClick={(levelOfPain) => handleClick(levelOfPain)}
+            />
+        </div>
+      </div>
+  )
 }
 
 export default SeverityScreen;

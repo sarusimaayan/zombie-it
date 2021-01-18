@@ -1,4 +1,5 @@
 const axios = require("axios");
+const dbUtils = require('./db/dbUtils');
 
 const illnessesUrl = "http://dmmw-api.australiaeast.cloudapp.azure.com:8080/illnesses";
 const hospitalsUrl = "http://dmmw-api.australiaeast.cloudapp.azure.com:8080/hospitals";
@@ -14,7 +15,6 @@ const getIllnesses = async (req, res) => {
     });
 }
 
-
 const getHospitals = async (req, res) => {
   axios.get(hospitalsUrl)
     .then((response) => {
@@ -23,7 +23,21 @@ const getHospitals = async (req, res) => {
     });
 }
 
+const postPatientDetails = async (req, res) => {
+  console.log('params', req.body);
+  const { firstName, lastName, illnessObject } = req.body;
+  try {
+    await dbUtils.inserPatient(firstName, lastName, illnessObject);
+    console.log('success');
+    res.send({ success: true });
+  } catch (e) {
+    console.log('fail', e);
+    res.send({ success: false });
+  }
+}
+
 module.exports = {
     getIllnesses,
-    getHospitals
+    getHospitals,
+    postPatientDetails,
 }

@@ -1,3 +1,6 @@
+import Storage from './storageUtils';
+import { PATIENT_DATA } from './constants';
+import { postDetails } from '../api/apiUtils';
 
 //Convert time in minutes to hours and days
 export const getTimeFormat = (minutes) => {
@@ -23,3 +26,22 @@ export const getTimeFormat = (minutes) => {
   }
   return waitPeriod
 }
+
+export const getPatientInfo = () => {
+  return {
+    firstName : Storage.get(PATIENT_DATA.FirstName),
+    lastName : Storage.get(PATIENT_DATA.LastName),
+    illnessObject : [
+      {
+        illnessId : Storage.get(PATIENT_DATA.IllnessId),
+        illnessName : Storage.get(PATIENT_DATA.IllnessName),
+        patientPainLevel : Storage.get(PATIENT_DATA.LevelOfPain)
+      }
+    ]
+  };
+}
+
+export const savePatientInfoToDB = async () => {
+  const data = getPatientInfo();
+  return postDetails(data);
+};

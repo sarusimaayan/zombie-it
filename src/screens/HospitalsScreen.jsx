@@ -4,7 +4,6 @@ import Heading from "../components/Heading";
 import HospitalButton from "../components/HospitalButton";
 
 const HospitalsScreen = (props) => {
-  console.log(props);
   const [hospitals, setHospitals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -16,9 +15,7 @@ const HospitalsScreen = (props) => {
     try{
       const fetchHospitals = async() => {
         const hospitalsArray = await api.getHospitals();
-        console.log(hospitalsArray.data);
         setHospitals(hospitalsArray.data)
-
         setIsLoading(false);
       }
 
@@ -70,6 +67,7 @@ const HospitalsScreen = (props) => {
               {hospitalsTotalProcessTimeArraySorted.map((hospitalObject, index) => {
                 return(
                   <HospitalButton
+                    key={hospitalObject.id}
                     name={hospitalObject.name}
                     waitTime={hospitalObject.totalProcessTime}
                   />

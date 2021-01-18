@@ -14,29 +14,25 @@ const SeverityButton = (props) =>{
   }
 
   return(
-    <div class="severity">
+    <div className="severity">
       <button onClick={() => handleClick(0)}>
         <Emojy0 style={{color: "DarkBlue", fontSize: "50px"}} />
       </button>
-
 
       <button onClick={() => handleClick(1)}>
         <Emojy1 style={{color: "ForestGreen", fontSize: "50px"}} />
       </button>
 
-
       <button onClick={() => handleClick(2)}>
-      <Emojy2 style={{color: "Gold", fontSize: "50px"}} />
+        <Emojy2 style={{color: "Gold", fontSize: "50px"}} />
       </button>
-
 
       <button onClick={() => handleClick(3)}>
-      <Emojy3 style={{color: "DarkOrange", fontSize: "50px"}} />
+        <Emojy3 style={{color: "DarkOrange", fontSize: "50px"}} />
       </button>
 
-
       <button onClick={() => handleClick(4)}>
-      <Emojy4 style={{color: "FireBrick", fontSize: "50px"}} />
+        <Emojy4 style={{color: "FireBrick", fontSize: "50px"}} />
       </button>
     </div>
   );

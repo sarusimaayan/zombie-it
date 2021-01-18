@@ -3,7 +3,8 @@ import api from '../api/apiUtils';
 import Heading from "../components/Heading";
 import IllnessButton from "../components/IllnessButton";
 import { useHistory } from "react-router-dom";
-
+import Storage from '../utils/storageUtils';
+import { PATIENT_DATA } from '../utils/constants';
 
 const IllnessesScreen = () => {
   const history = useHistory();
@@ -16,7 +17,6 @@ const IllnessesScreen = () => {
     try {
       const fetchIllnesses = async() =>{
         const illnessesResponse = await api.getIllnesses();
-        console.log(illnessesResponse.data);
         setIllnesses(illnessesResponse.data);
         setIsLoading(false);
       }
@@ -28,7 +28,11 @@ const IllnessesScreen = () => {
     }
   }, []);
 
-
+const handleClick = (illnessObject) => {
+  Storage.save(PATIENT_DATA.IllnessId, illnessObject.id);
+  Storage.save(PATIENT_DATA.IllnessName, illnessObject.name);
+  history.push("/severity", illnessObject);
+}
 
   return (
     isError ? (
@@ -44,8 +48,9 @@ const IllnessesScreen = () => {
             {illnesses.map((illnessObject, index) => {
               return(
                 <IllnessButton
+                  key={illnessObject.id}
                   name={illnessObject.name}
-                  onClick={() => history.push("/severity", illnessObject)}
+                  onClick={() => handleClick(illnessObject)}
                 />
               )
             })}

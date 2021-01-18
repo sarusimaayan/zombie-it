@@ -5,12 +5,13 @@ import Button from "react-bootstrap/Button";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles.css';
 import { useHistory } from "react-router-dom";
+import Storage from '../utils/storageUtils';
+import { PATIENT_DATA } from '../utils/constants';
 
 const LoginScreen = () => {
   const history = useHistory();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-
 
   const validateDetails = (name) => {
     return (firstName.length > 0 && lastName.length > 0);
@@ -18,8 +19,9 @@ const LoginScreen = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    Storage.save(PATIENT_DATA.FirstName, firstName);
+    Storage.save(PATIENT_DATA.LastName, lastName);
     history.push("/illnesses");
-    //const submitData illnessName...
   }
 
   return (

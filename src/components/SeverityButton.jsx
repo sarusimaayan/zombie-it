@@ -14,7 +14,7 @@ const SeverityButton = (props) =>{
   }
 
   return(
-    <div className="severity">
+    <div className="severity-buttons-container">
       <button onClick={() => handleClick(0)}>
         <Emojy0 style={{color: "DarkBlue", fontSize: "50px"}} />
       </button>

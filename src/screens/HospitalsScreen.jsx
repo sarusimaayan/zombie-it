@@ -54,7 +54,7 @@ const HospitalsScreen = (props) => {
     )
     : (
         <div className="container">
-          <div className="inner-center">
+          <div className="inner-screen-container">
             <Heading text = "Our suggested hospitals:" />
               {hospitalsTotalProcessTimeArraySorted.map((hospitalObject, index) => {
                 return(

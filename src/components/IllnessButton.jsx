@@ -4,7 +4,7 @@ import '../styles.css';
 const IllnessButton = (props) => {
   return(
     <div className="button" onClick={props.onClick}>
-      <div className="item-name">
+      <div className="button-item-name">
         <p>{props.name}</p>
       </div>
     </div>

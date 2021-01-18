@@ -27,17 +27,17 @@ h2,h5 {
   max-width: 800px;
 }
 
-.inner-center {
+.inner-screen-container {
   padding: 20px 20px 0;
 }
 
-.severity {
+.severity-buttons-container {
   padding-top: 40px;
   display: flex;
   justify-content:space-around;
 }
 
-.item-name {
+.button-item-name {
   margin: 5px;
   padding: 5px;
   padding-left: 5px;
@@ -46,7 +46,7 @@ h2,h5 {
   font-size: 22px;
 }
 
-.waitTime {
+.button-waitTime {
   margin: 5px;
   padding: 5px;
   display: flex;
@@ -71,37 +71,21 @@ h2,h5 {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-
-   background: #FFFFFF;
-   background-image: -webkit-linear-gradient(top, #FFFFFF, #BCBCBC);
-   background-image: -moz-linear-gradient(top, #FFFFFF, #BCBCBC);
-   background-image: -ms-linear-gradient(top, #FFFFFF, #BCBCBC);
-   background-image: -o-linear-gradient(top, #FFFFFF, #BCBCBC);
-   background-image: -webkit-gradient(to bottom, #FFFFFF, #BCBCBC);
-
+   background: white;
    border-radius: 6px;
    border: solid grey 1px;
-
    margin: 5px;
-   padding: 0;
    height: 80px;
    width: 100%;
-   color: #000000;
+   color: black;
    font-family: Arial;
    font-size: 20px;
 }
 
 .button:hover {
    border: solid #99C624 2px;
-   background: #FFFFFF;
-   background-image: -webkit-linear-gradient(top, #FFFFFF, #BCBCBC);
-   background-image: -moz-linear-gradient(top, #FFFFFF, #BCBCBC);
-   background-image: -ms-linear-gradient(top, #FFFFFF, #BCBCBC);
-   background-image: -o-linear-gradient(top, #FFFFFF, #BCBCBC);
-   background-image: -webkit-gradient(to bottom, #FFFFFF, #BCBCBC);
-
+   background: white;
    border-radius: 6px;
-   text-decoration: none;
 }
 
 @media (min-width: 1200px){
@@ -109,7 +93,7 @@ h2,h5 {
     width: 20%;
   }
 
-  .item-name {
+  .button-item-name {
     width: 70%;
   }
 
@@ -138,13 +122,13 @@ h2,h5 {
     width: 90%;
   }
 
-  .severity {
+  .severity-buttons-container {
     display: flex;
     flex-direction: column;
     justify-content:space-around;
   }
 
-  .item-name {
+  .button-item-name {
     font-size: 18px;
   }
 
@@ -159,7 +143,7 @@ h2,h5 {
 }
 
 @media (max-width: 500px){
-  .item-name {
+  .button-item-name {
     font-size: 14px;
   }
 }
@@ -176,7 +160,8 @@ h2,h5 {
   .container {
     width: 100%;
   }
-  .item-name {
+
+  .button-item-name {
     font-size: 11px;
   }
 

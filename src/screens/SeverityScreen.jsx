@@ -22,7 +22,7 @@ const handleClick = (levelOfPain) => {
 
 return (
       <div className="container">
-        <div className="inner-center">
+        <div className="inner-screen-container">
           <Heading text = "Select severity level:" />
           <h2>{illnessName}</h2>
             <SeverityButton

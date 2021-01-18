@@ -36,7 +36,7 @@ const handleClick = (illnessObject) => {
     )
     : (
         <div className="container">
-          <div className="inner-center">
+          <div className="inner-screen-container">
             <Heading text = "Select an illness:" />
             {illnesses.map((illnessObject, index) => {
               return(

@@ -9,7 +9,7 @@ const HospitalButton = (props) => {
       <div className="button-item-name">
         <p>{props.name}</p>
       </div>
-      <div className="button-waitTime">
+      <div className="button-wait-time">
         <span className="text">Wait time:</span>
         <span className="time">{getTimeFormat(props.waitTime)}</span>
       </div>

@@ -16,6 +16,10 @@ h2,h5 {
   padding-top: 10px;
 }
 
+p {
+  margin: 0;
+}
+
 .Login form {
   margin: 0 auto;
   max-width: 320px;
@@ -46,7 +50,7 @@ h2,h5 {
   font-size: 22px;
 }
 
-.button-waitTime {
+.button-wait-time {
   margin: 5px;
   padding: 5px;
   display: flex;
@@ -89,7 +93,7 @@ h2,h5 {
 }
 
 @media (min-width: 1200px){
-  .waitTime {
+  .button-wait-time {
     width: 20%;
   }
 

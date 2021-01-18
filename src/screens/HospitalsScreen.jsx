@@ -5,20 +5,17 @@ import HospitalButton from "../components/HospitalButton";
 
 const HospitalsScreen = (props) => {
   const [hospitals, setHospitals] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const prop = props.history.location;
   const painLevel = prop.state || "0";
 
 //Get the full hospitals array from the server
   useEffect(() => {
-    try{
+    try {
       const fetchHospitals = async() => {
         const hospitalsArray = await api.getHospitals();
         setHospitals(hospitalsArray.data)
-        setIsLoading(false);
       }
-
       fetchHospitals();
 
     } catch (err) {
@@ -35,7 +32,6 @@ const HospitalsScreen = (props) => {
     return totalProcessTime;
   }
 
-
 //For each hospital, calculate the total waiting time and add it to the hospital object
   const hospitalsTotalProcessTimeArray = hospitals.map((hospitalObject, index) => {
     const totalProcessTime = calcTotalProcessTime(hospitalObject, painLevel);
@@ -44,7 +40,6 @@ const HospitalsScreen = (props) => {
       totalProcessTime,
     }
   });
-
 
 //Sort the hospitals by waiting time (Shortest to longest)
   const hospitalsTotalProcessTimeArraySorted =
@@ -58,9 +53,6 @@ const HospitalsScreen = (props) => {
       <div>error</div>
     )
     : (
-      isLoading ? (
-        <div>loading</div>
-      ) : (
         <div className="container">
           <div className="inner-center">
             <Heading text = "Our suggested hospitals:" />
@@ -77,7 +69,6 @@ const HospitalsScreen = (props) => {
         </div>
 
       )
-    )
   );
 }
 

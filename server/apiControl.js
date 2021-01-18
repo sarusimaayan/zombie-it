@@ -1,4 +1,4 @@
-const axios = require("axios");
+const axios = require('axios');
 const dbUtils = require('./db/dbUtils');
 
 const illnessesUrl = "http://dmmw-api.australiaeast.cloudapp.azure.com:8080/illnesses";

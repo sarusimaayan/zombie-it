@@ -1,6 +1,6 @@
-const express = require("express");
+const express = require('express');
 const cors = require('cors');
-const path = require("path");
+const path = require('path');
 const router = require('./router');
 const bodyParser = require('body-parser');
 
@@ -13,7 +13,7 @@ app.use(express.static("public"));
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use('/api', router);
+app.use("/api", router);
 
 app.use((req, res, next) => {
   res.sendFile(path.join(__dirname, "..", "build", "index.html"));

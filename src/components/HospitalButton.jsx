@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 import '../styles.css';
-import { getTimeFormat } from "../utils/utils";
+import { getTimeFormat } from '../utils/utils';
 
 
 const HospitalButton = (props) => {

@@ -42,7 +42,7 @@ const LoginScreen = () => {
             onChange={(e) => setLastName(e.target.value)}
           />
         </Form.Group>
-        <Button color="primary" block size="lg" type="submit" disabled={!validateDetails()}>
+        <Button margin-top='5px' color="primary" block size="lg" type="submit" disabled={!validateDetails()}>
           Continue
         </Button>
       </Form>

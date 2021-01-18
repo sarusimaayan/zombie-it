@@ -9,7 +9,6 @@ import { PATIENT_DATA } from '../utils/constants';
 const IllnessesScreen = () => {
   const history = useHistory();
   const [illnesses, setIllnesses] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
 //Get the full illnesses array from the server
@@ -18,11 +17,8 @@ const IllnessesScreen = () => {
       const fetchIllnesses = async() =>{
         const illnessesResponse = await api.getIllnesses();
         setIllnesses(illnessesResponse.data);
-        setIsLoading(false);
       }
-
       fetchIllnesses();
-
     } catch (err) {
       setIsError(true);
     }
@@ -39,9 +35,6 @@ const handleClick = (illnessObject) => {
       <div>error</div>
     )
     : (
-      isLoading ? (
-        <div>loading</div>
-      ) : (
         <div className="container">
           <div className="inner-center">
             <Heading text = "Select an illness:" />
@@ -57,7 +50,6 @@ const handleClick = (illnessObject) => {
             </div>
         </div>
       )
-    )
   );
 }
 

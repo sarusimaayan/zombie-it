@@ -1,28 +1,19 @@
 body {
   margin: 0;
   padding: 60px 60px;
-  /* text-align: left; */
   background-color: #36454f;
+  text-align: left;
+
 }
 
 h1 {
   color: #99C624;
   padding-bottom: 20px;
-  text-align: left;
 }
 
 h2,h5 {
-  padding-top: 10px;
   color: black;
-}
-
-h3 {
-  padding-left: 20px;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  padding-top: 10px;
 }
 
 .Login form {
@@ -33,7 +24,7 @@ code {
 .container {
   margin: auto;
   width: 70%;
-  max-width: 700px;
+  max-width: 800px;
 }
 
 .inner-center {
@@ -51,9 +42,8 @@ code {
   padding: 5px;
   padding-left: 5px;
   display: flex;
-  text-align: left;
   width: 65%;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .waitTime {
@@ -112,4 +102,89 @@ code {
 
    border-radius: 6px;
    text-decoration: none;
+}
+
+@media (min-width: 1200px){
+  .waitTime {
+    width: 20%;
+  }
+
+  .item-name {
+    width: 70%;
+  }
+
+}
+@media (max-width: 1000px){
+  .container {
+    width: 85%;
+  }
+}
+
+@media (max-width: 750px){
+  body {
+    padding: 0px;
+  }
+
+  h1 {
+    font-size: 30px;
+    padding-top: 20px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .severity {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+  }
+
+  .item-name {
+    font-size: 18px;
+  }
+
+  .text {
+    font-size: 13px;
+  }
+
+  .time {
+    font-size: 13px;
+  }
+
+}
+
+@media (max-width: 500px){
+  .item-name {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 300px){
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .container {
+    width: 100%;
+  }
+  .item-name {
+    font-size: 11px;
+  }
+
+  .text {
+    font-size: 11px;
+  }
+
+  .time {
+    font-size: 11px;
+  }
 }

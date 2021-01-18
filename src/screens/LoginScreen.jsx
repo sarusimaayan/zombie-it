@@ -23,7 +23,7 @@ const LoginScreen = () => {
   }
 
   return (
-    <div className="Login">
+    <div className="Login container">
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="name">
         <Heading text = "Please enter patient's details" />

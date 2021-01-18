@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../api';
+import api from '../api/apiUtils';
 import Heading from "../components/Heading";
 import HospitalButton from "../components/HospitalButton";
 
@@ -77,7 +77,7 @@ const HospitalsScreen = (props) => {
               })}
           </div>
         </div>
-        
+
       )
     )
   );

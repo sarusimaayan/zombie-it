@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../api';
+import api from '../api/apiUtils';
 import Heading from "../components/Heading";
 import IllnessButton from "../components/IllnessButton";
 import { useHistory } from "react-router-dom";

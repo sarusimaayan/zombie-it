@@ -1,4 +1,3 @@
-// const http = require("http");
 const axios = require("axios");
 
 const illnessesUrl = "http://dmmw-api.australiaeast.cloudapp.azure.com:8080/illnesses";

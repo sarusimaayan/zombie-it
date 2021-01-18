@@ -13,7 +13,7 @@ const LoginScreen = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
 
-  const validateDetails = (firstName, lastName) => {
+  const validateDetails = (name) => {
     return (firstName.length > 0 && lastName.length > 0);
   };
 

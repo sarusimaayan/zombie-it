@@ -1,5 +1,7 @@
 import React from 'react';
 import '../styles.css';
+import PropTypes from 'prop-types';
+
 
 const IllnessButton = (props) => {
   return(
@@ -9,6 +11,11 @@ const IllnessButton = (props) => {
       </div>
     </div>
   );
+};
+
+IllnessButton.propTypes = {
+  onClick: PropTypes.func,
+  name: PropTypes.string,
 };
 
 export default IllnessButton;

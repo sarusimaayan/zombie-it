@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import api from '../api/apiUtils';
 import Heading from '../components/Heading';
 import HospitalButton from '../components/HospitalButton';
+import PropTypes from 'prop-types';
+
 
 const HospitalsScreen = (props) => {
   const [hospitals, setHospitals] = useState([]);
@@ -34,7 +36,7 @@ const HospitalsScreen = (props) => {
   };
 
   //For each hospital, calculate the total waiting time and add it to the hospital object
-  const hospitalsTotalProcessTimeArray = hospitals.map((hospitalObject, index) => {
+  const hospitalsTotalProcessTimeArray = hospitals.map((hospitalObject) => {
     const totalProcessTime = calcTotalProcessTime(hospitalObject, painLevel);
     return {
       ...hospitalObject,
@@ -57,7 +59,7 @@ const HospitalsScreen = (props) => {
         <div className="container">
           <div className="inner-screen-container">
             <Heading text = "Our suggested hospitals:" />
-            {hospitalsTotalProcessTimeArraySorted.map((hospitalObject, index) => {
+            {hospitalsTotalProcessTimeArraySorted.map((hospitalObject) => {
               return(
                 <HospitalButton
                   key={hospitalObject.id}
@@ -71,6 +73,10 @@ const HospitalsScreen = (props) => {
 
       )
   );
+};
+
+HospitalsScreen.propTypes = {
+  history: PropTypes.object,
 };
 
 export default HospitalsScreen;

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles.css';
+import PropTypes from 'prop-types';
 import Emojy0 from '@material-ui/icons/SentimentSatisfied';
 import Emojy1 from '@material-ui/icons/SentimentDissatisfied';
 import Emojy2 from '@material-ui/icons/SentimentVeryDissatisfied';
@@ -36,6 +37,10 @@ const SeverityButton = (props) =>{
       </button>
     </div>
   );
+};
+
+SeverityButton.propTypes = {
+  onClick: PropTypes.func,
 };
 
 export default SeverityButton;

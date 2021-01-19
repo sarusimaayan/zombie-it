@@ -38,7 +38,7 @@ const IllnessesScreen = () => {
         <div className="container">
           <div className="inner-screen-container">
             <Heading text = "Select an illness:" />
-            {illnesses.map((illnessObject, index) => {
+            {illnesses.map((illnessObject) => {
               return(
                 <IllnessButton
                   key={illnessObject.id}

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles.css';
 import { getTimeFormat } from '../utils/utils';
+import PropTypes from 'prop-types';
 
 
 const HospitalButton = (props) => {
@@ -15,6 +16,11 @@ const HospitalButton = (props) => {
       </div>
     </div>
   );
+};
+
+HospitalButton.propTypes = {
+  name: PropTypes.string,
+  waitTime: PropTypes.string,
 };
 
 export default HospitalButton;

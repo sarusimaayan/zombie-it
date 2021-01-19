@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import Storage from '../utils/storageUtils';
 import { savePatientInfoToDB } from '../utils/utils';
 import { PATIENT_DATA } from '../utils/constants';
+import PropTypes from 'prop-types';
 
 const SeverityScreen = (props) => {
   const history = useHistory();
@@ -32,6 +33,10 @@ const SeverityScreen = (props) => {
       </div>
     </div>
   );
+};
+
+SeverityScreen.propTypes = {
+  history: PropTypes.object,
 };
 
 export default SeverityScreen;

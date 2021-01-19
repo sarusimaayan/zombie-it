@@ -27,10 +27,10 @@ It also collects patient’s name and information about their illness and store 
 
 ## Read from Data Base
 Open terminal and type the following:
->> mongo
->> show dbs
->> use patientsDB
->> db.patients.find()
+mongo
+show dbs
+use patientsDB
+db.patients.find()
 
 ## Tests
 Not available currently.
@@ -38,5 +38,5 @@ Not available currently.
 
 
 
-
+## Thanks!
 Developed by Maayan Rozen

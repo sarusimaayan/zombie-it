@@ -27,9 +27,9 @@ const HospitalsScreen = (props) => {
 
   //Calculate the total waiting time (in minuts) for the selected level of pain
   const calcTotalProcessTime = (hospitalObject, painLevel) => {
-    const hospitalWaitingList = hospitalObject.waitingList[painLevel];
+    const hospitalWaitingObject = hospitalObject.waitingList.find(waitItem => waitItem.levelOfPain == painLevel);
     const totalProcessTime =
-      hospitalWaitingList.averageProcessTime * hospitalWaitingList.patientCount;
+      hospitalWaitingObject.averageProcessTime * hospitalWaitingObject.patientCount;
     return totalProcessTime;
   };
 

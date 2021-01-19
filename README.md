@@ -25,7 +25,7 @@ It also collects patient’s name and information about their illness and store 
 1) Run the app with "npm run start-build"
 2) view it on your local host http://localhost:5000/
 
-## Read from Data Base
+## Read from DataBase
 Open terminal and type the following:
 - mongo
 - show dbs
